@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "kliq",
+        "password": "kliq",
+        "database": "kliq",
+        "host": "localhost",
+        "dialect": "postgres"
+    },
+    "test": {
+        "username": "kliq",
+        "password": "kliq",
+        "database": "kliq",
+        "host": "localhost",
+        "dialect": "postgres"
+    },
+    "production": {
+        "username": "kliq",
+        "password": "kliq",
+        "database": "kliq",
+        "host": "localhost",
+        "dialect": "postgres"
+    }
+}

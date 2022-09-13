@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  node_backend:
+    container_name: node_kliq
+    image: node_kliq:0.0.4
+    build:
+      context: .
+    ports:
+      - '3000:3000'
+      - '3001:3001'
+    environment:
+      - EXTERNAL_PORT=3001
+      - PGDATABASE=kliq_db
+      - PGUSER=kliqAdmin
+      - PGPASSWORD=kliqsocial2021
+      - PGHOST=kliqnode_db
+    depends_on:
+      - kliqnode_db
+  kliqnode_db:
+    container_name: kliqnode_db
+    image: 'postgres:12'
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=kliqAdmin
+      - POSTGRES_PASSWORD=kliqsocial2021
+      - POSTGRES_DB=kliq_db
+    volumes:
+      - nps_data:/var/lib/postgresql/data
+
+volumes:
+  nps_data: {}
